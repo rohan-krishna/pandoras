@@ -23,11 +23,11 @@ Route::prefix('users')->middleware('auth')->group(function() {
 	
 	Route::get('/','UserController@index');
 	
-	Route::get('create','UserController@create');
-	Route::post('create','UserController@store');
+	Route::get('create','UserController@create')->name('createUser');
+	Route::post('create','UserController@store')->name('storeUser');
 
 	Route::get('edit/{user}','UserController@edit');
-	Route::post('edit/{user}','UserController@update');
+	Route::post('edit/{user}','UserController@update')->name('updateUser');
 
 	Route::post('delete/{user}','UserController@delete');
 
@@ -35,4 +35,10 @@ Route::prefix('users')->middleware('auth')->group(function() {
 	Route::prefix('roles')->group(function() {
 		Route::get('/','RoleController@index');
 	});
+
+	Route::get('impersonate/{user}',function(pan\User $user) {
+		Auth::login($user);
+		return redirect('/');
+	});
+
 });

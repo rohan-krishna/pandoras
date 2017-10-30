@@ -36,10 +36,15 @@
 							<td>{{ $user->name }}</td>
 							<td>{{ $user->email }}</td>
 							<td>
-								--
+								@foreach($user->roles as $role)
+									<div class="ui label">{{ $role->name }}</div>
+								@endforeach
 							</td>
 							<td>
-								--
+								<a href="{{ url('users/impersonate/'.$user->id) }}" class="ui button black">
+									Impersonate User
+								</a>
+								<a href="{{ url('users/edit/'.$user->id) }}" class="ui button blue">Edit User</a>
 							</td>
 						</tr>
 						@endforeach
