@@ -15,6 +15,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/css/dataTables.semanticui.min.css" integrity="sha256-cWk5utlR8e51MrmYLtovUllID87EHp5XUjEHbm8dpAk=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css" integrity="sha256-k66BSDvi6XBdtM2RH6QQvCz2wk81XcWsiZ3kn6uFTmM=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,900" rel="stylesheet">
+
+
+
+    <script>
+        var base_url = '{{ url("/") }}';
+    </script>
+
+    <style>
+        body {
+            font-family: 'Source Sans Pro', sans-serif !important;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -46,9 +60,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.16/js/dataTables.semanticui.min.js" integrity="sha256-Mep6Qdh0UI/hWFGeRSDWmuAElrKNTtQBak2hIWBMrxE=" crossorigin="anonymous"></script>
     <script src="{{ asset('js/semantic.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js" integrity="sha256-egVvxkq6UBCQyKzRBrDHu8miZ5FOaVrjSqQqauKglKc=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.js"></script>
     <script>
         $(document).ready(function() {
+            
             $('.ui.dropdown').dropdown();
+
+            Waves.attach('button.ui.button');
+            Waves.init();
+
         })
     </script>
     @stack('scripts')

@@ -41,7 +41,8 @@
 								@endforeach
 							</td>
 							<td>
-								<a href="{{ url('users/impersonate/'.$user->id) }}" class="ui button black">
+								<a href="{{ url('users/impersonate/'.$user->id) }}" class="ui button labeled icon black">
+									<i class="icon lightning" style="color: #FFC107;"></i>
 									Impersonate User
 								</a>
 								<a href="{{ url('users/edit/'.$user->id) }}" class="ui button blue">Edit User</a>
