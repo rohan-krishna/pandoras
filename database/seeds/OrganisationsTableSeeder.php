@@ -16,6 +16,6 @@ class OrganisationsTableSeeder extends Seeder
         //
         $faker = Faker\Factory::create();
 
-        $org = Organisation::create(['name' => $faker->company]);
+        $org = Organisation::create(['name' => $faker->company . " " . $faker->companySuffix]);
     }
 }

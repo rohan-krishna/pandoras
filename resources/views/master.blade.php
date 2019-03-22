@@ -19,64 +19,54 @@
     <link href="http://cdn.bluehexagon.in/ads/argon.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.css">
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-default">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+    @include('sweetalert::alert')
+    <div class="" id="app">
+        @include('navbar')
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
+        {{-- sidebar --}}
+        <div class="row">
+            <div class="col-md-2 col-sm-3">
+                <div class="container-fluid py-4">
+                    {{-- <h3 class="title">Aside</h3> --}}
+                    {{-- <p>this is a side navigation bar</p> --}}
+                    {{-- <hr> --}}
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
+                    <ul class="nav flex-column nav-fill">
+                        <li class="nav-item">
+                            <a href="{{ route('userIndex') }}" class="nav-link">User Management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ url('oauth') }}" class="nav-link">Oauth</a>
+                        </li>
                     </ul>
                 </div>
             </div>
-        </nav>
+            <!-- /.col-md-3 -->
 
-        <main class="py-4">
-            @yield('content')
-        </main>
+            <div class="col-md-10 col-sm-9">
+                {{-- .content-wrapper --}}
+                <main class="py-4 content-wrapper">
+                    <div class="container">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <h3>Please fix the following errors: </h3>
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </div>
+                    @yield('content')
+                </main>
+            </div>
+            <!-- /.col -->
+        </div>
+
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>

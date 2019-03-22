@@ -1,0 +1,23 @@
+
+<?xml version="1.0"?>
+<md:EntityDescriptor xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" validUntil="2019-03-23T09:14:51Z" cacheDuration="PT1553764491S" entityID="http://linked.stratforge.com">
+  <md:IDPSSODescriptor WantAuthnRequestsSigned="false" protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIICXjCCAcegAwIBAgIBADANBgkqhkiG9w0BAQ0FADBMMQswCQYDVQQGEwJpbjETMBEGA1UECAwKVGFtaWwgTmFkdTETMBEGA1UECgwKU3RyYXRmb3JnZTETMBEGA1UEAwwKU3RyYXRmb3JnZTAeFw0xOTAzMjEwOTE0NDFaFw0yMDAzMjAwOTE0NDFaMEwxCzAJBgNVBAYTAmluMRMwEQYDVQQIDApUYW1pbCBOYWR1MRMwEQYDVQQKDApTdHJhdGZvcmdlMRMwEQYDVQQDDApTdHJhdGZvcmdlMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDP19X9zileUnNQdKQMz09eoEbtTmw3pqXAHoB2JutvTsLAPpKfK3CNDVkmilEiHEnv4jea6TVDoXeuhyhSYWQRpWKf4VeYiwBUgtnun4l0VkbqMn1zLbV840Qh9/U+Ej3HjkXJk4GNeX3i1Ygtw/rpEgG3/8BIjIFBz5sGVm9GIwIDAQABo1AwTjAdBgNVHQ4EFgQU9Gc+Gh9q6G+cghZMpbblh3LYbJwwHwYDVR0jBBgwFoAU9Gc+Gh9q6G+cghZMpbblh3LYbJwwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQ0FAAOBgQAgukzPmHpnypbyfnpxyRZH8LmaL9BJJ0KhtHImYnxdWQfobrWbavzkeL9ZKhDCqXE+USnkhTRHsdjbkt303HxWG7huC09wjT/EYJvp8XO4KVD9HpGT5nzdm/aIecUX/JXixCKXwo9B8DmfuFgxr1VWtaIVeu/e3iboJOCG0/BvwQ==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:KeyDescriptor use="encryption">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>MIICXjCCAcegAwIBAgIBADANBgkqhkiG9w0BAQ0FADBMMQswCQYDVQQGEwJpbjETMBEGA1UECAwKVGFtaWwgTmFkdTETMBEGA1UECgwKU3RyYXRmb3JnZTETMBEGA1UEAwwKU3RyYXRmb3JnZTAeFw0xOTAzMjEwOTE0NDFaFw0yMDAzMjAwOTE0NDFaMEwxCzAJBgNVBAYTAmluMRMwEQYDVQQIDApUYW1pbCBOYWR1MRMwEQYDVQQKDApTdHJhdGZvcmdlMRMwEQYDVQQDDApTdHJhdGZvcmdlMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDP19X9zileUnNQdKQMz09eoEbtTmw3pqXAHoB2JutvTsLAPpKfK3CNDVkmilEiHEnv4jea6TVDoXeuhyhSYWQRpWKf4VeYiwBUgtnun4l0VkbqMn1zLbV840Qh9/U+Ej3HjkXJk4GNeX3i1Ygtw/rpEgG3/8BIjIFBz5sGVm9GIwIDAQABo1AwTjAdBgNVHQ4EFgQU9Gc+Gh9q6G+cghZMpbblh3LYbJwwHwYDVR0jBBgwFoAU9Gc+Gh9q6G+cghZMpbblh3LYbJwwDAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQ0FAAOBgQAgukzPmHpnypbyfnpxyRZH8LmaL9BJJ0KhtHImYnxdWQfobrWbavzkeL9ZKhDCqXE+USnkhTRHsdjbkt303HxWG7huC09wjT/EYJvp8XO4KVD9HpGT5nzdm/aIecUX/JXixCKXwo9B8DmfuFgxr1VWtaIVeu/e3iboJOCG0/BvwQ==</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>
+    <md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://pandoras.test/logout"/>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+    <md:SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://pandoras.test/login"/>
+  </md:IDPSSODescriptor>
+</md:EntityDescriptor>

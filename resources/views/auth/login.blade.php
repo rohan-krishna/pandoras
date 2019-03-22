@@ -11,6 +11,12 @@
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
+                         {{-- Add a hidden SAML Request field for SAML authentication --}}
+                        @if(isset($_GET['SAMLRequest']))
+                            <input type="hidden" id="SAMLRequest" name="SAMLRequest" value="{{ urlencode(htmlspecialchars($_GET['SAMLRequest'])) }}">
+                            <textarea name="" id="" cols="30" rows="10">{{ urlencode(htmlspecialchars($_GET['SAMLRequest'])) }}</textarea>
+                        @endif
+
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 

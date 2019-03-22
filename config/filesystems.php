@@ -64,6 +64,11 @@ return [
             'url' => env('AWS_URL'),
         ],
 
+        'saml' => [
+            'driver' => 'local',
+            'root' => storage_path().'/saml',
+        ],
+
     ],
 
 ];
