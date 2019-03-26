@@ -20,5 +20,6 @@ class VerifyCsrfToken extends Middleware
      */
     protected $except = [
         //
+        'http://pandoras.test/saml2/acs'
     ];
 }

@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Aacotroneo\Saml2\Events\Saml2LoginEvent;
+use Log;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -18,6 +20,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        \Aacotroneo\Saml2\Events\Saml2LoginEvent::class => [
+            MySamlLoginListener::class
+        ]
     ];
 
     /**
@@ -28,7 +33,5 @@ class EventServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-
-        //
     }
 }
