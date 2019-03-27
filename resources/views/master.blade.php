@@ -16,7 +16,7 @@
     
     <!-- Styles -->
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
-    <link href="http://cdn.bluehexagon.in/ads/argon.min.css" rel="stylesheet">
+    <link href="{{ asset('css/argon.min.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.css">
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -70,7 +70,7 @@
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="http://cdn.bluehexagon.in/ads/argon.min.js"></script>
+    <script src="{{ asset('js/argon.min.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/node-waves/0.7.6/waves.min.js"></script>
     <script>
         $(document).ready(function() {
